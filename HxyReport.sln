@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{446D1A48-430E-49EC-8E97-6124F003EDB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{1AEDBAEB-D4D7-4AF0-AD2B-3CACE2EADBD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HxyReport.Services", "HxyReport.Services\HxyReport.Services.csproj", "{7AB928AD-B164-4A83-AE5F-5ABDE6B47211}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HxyReport.Core", "HxyReport.Core\HxyReport.Core.csproj", "{AB4307D9-C505-4C09-BF79-BB04EE013F66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HxyReport.Data", "HxyReport.Data\HxyReport.Data.csproj", "{AC34A053-D492-450B-BC3E-6CE25B341EBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HxyReport.Client", "HxyReport.Client\HxyReport.Client.csproj", "{D1412573-16C5-4AB4-97C0-67A31EFE6680}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AB928AD-B164-4A83-AE5F-5ABDE6B47211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB928AD-B164-4A83-AE5F-5ABDE6B47211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB928AD-B164-4A83-AE5F-5ABDE6B47211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB928AD-B164-4A83-AE5F-5ABDE6B47211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB4307D9-C505-4C09-BF79-BB04EE013F66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB4307D9-C505-4C09-BF79-BB04EE013F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB4307D9-C505-4C09-BF79-BB04EE013F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB4307D9-C505-4C09-BF79-BB04EE013F66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC34A053-D492-450B-BC3E-6CE25B341EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC34A053-D492-450B-BC3E-6CE25B341EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC34A053-D492-450B-BC3E-6CE25B341EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC34A053-D492-450B-BC3E-6CE25B341EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1412573-16C5-4AB4-97C0-67A31EFE6680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1412573-16C5-4AB4-97C0-67A31EFE6680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1412573-16C5-4AB4-97C0-67A31EFE6680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1412573-16C5-4AB4-97C0-67A31EFE6680}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7AB928AD-B164-4A83-AE5F-5ABDE6B47211} = {446D1A48-430E-49EC-8E97-6124F003EDB6}
+		{AB4307D9-C505-4C09-BF79-BB04EE013F66} = {446D1A48-430E-49EC-8E97-6124F003EDB6}
+		{AC34A053-D492-450B-BC3E-6CE25B341EBF} = {446D1A48-430E-49EC-8E97-6124F003EDB6}
+		{D1412573-16C5-4AB4-97C0-67A31EFE6680} = {1AEDBAEB-D4D7-4AF0-AD2B-3CACE2EADBD4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F819628-9DB6-4C69-AA86-C47348D92ABF}
+	EndGlobalSection
+EndGlobal
