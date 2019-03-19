@@ -46,19 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\BaseModel.cs" />
-    <Compile Include="Base\BaseDap.cs" />
-    <Compile Include="DB\AppOffice\IUnitOfWork.cs" />
-    <Compile Include="DB\AppOffice\Principal\DapperAccessPrincipal.cs" />
+    <Compile Include="DB\AppOffice\Daps\SysLoginUser\ISysLoginUserDap.cs" />
+    <Compile Include="DB\AppOffice\Daps\SysLoginUser\SysLoginUserDap.cs" />
+    <Compile Include="DB\E7HR\Principal\AppE7HRDap.cs" />
+    <Compile Include="DB\E7HR\Daps\EmpInfo\EmpInfoDap.cs" />
+    <Compile Include="DB\E7HR\Daps\EmpInfo\IEmpInfoDap.cs" />
+    <Compile Include="Public\BaseModel.cs" />
+    <Compile Include="DB\AppOffice\Principal\AppOfficeBaseDap.cs" />
     <Compile Include="DB\AppOffice\Principal\EntityObjects.cs" />
-    <Compile Include="DB\E7HR\IE7HRUnitOfWork.cs" />
-    <Compile Include="DB\E7HR\Principal\DapperAccessPrincipal.cs" />
     <Compile Include="DB\E7HR\Principal\EntityObjects.cs" />
-    <Compile Include="DB\E7HR\E7HRUnitOfWork.cs" />
     <Compile Include="DB\E7HR\UserEntities\EmpInfo.cs" />
     <Compile Include="DB\E7HR\UserDap\EmpInfoDap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DB\AppOffice\AppOfficeUnitOfWork.cs" />
     <Compile Include="DB\AppOffice\UserEntities\SysLoginUser.cs" />
     <Compile Include="DB\AppOffice\UserDap\SysLoginUserDap.cs" />
   </ItemGroup>

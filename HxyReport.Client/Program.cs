@@ -17,8 +17,8 @@ namespace HxyReport.Client
         {
             // Create your builder.
             var builder = new ContainerBuilder();
-            builder.RegisterType<AppOfficeUnitOfWork>().As<IAppOfficeUnitOfWork>();
-            builder.RegisterType<E7HRUnitOfWork>().As<IE7HRUnitOfWork>();
+            builder.RegisterType<SysLoginUserDap>().As<ISysLoginUserDap>();
+            builder.RegisterType<EmpInfoDap>().As<IEmpInfoDap>();
             builder.RegisterType<UserService>().As<IUserService>();
 
             Container = builder.Build();
@@ -27,7 +27,7 @@ namespace HxyReport.Client
 
             var model = us.GetModel(547);
             var emp = us.GetEmpModel(547);
-            
+
         }
     }
 }

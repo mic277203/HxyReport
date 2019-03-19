@@ -11,37 +11,21 @@ namespace HxyReport.Services.Users
 {
     public class UserService : IUserService
     {
-        private readonly Func<IAppOfficeUnitOfWork> _AppOfficeUnitOfwork;
-        private readonly Func<IE7HRUnitOfWork> _E7HRUnitOfWork;
-        public UserService(Func<IAppOfficeUnitOfWork> appOfficeUnitOfwork, Func<IE7HRUnitOfWork> e7HRUnitOfWork)
+        private readonly ISysLoginUserDap _SysLoginUserDap;
+        private readonly IEmpInfoDap _EmpInfoDap;
+        public UserService(ISysLoginUserDap sysLoginUserDap, IEmpInfoDap empInfoDap)
         {
-            _AppOfficeUnitOfwork = appOfficeUnitOfwork;
-            _E7HRUnitOfWork = e7HRUnitOfWork;
+            _SysLoginUserDap = sysLoginUserDap;
+            _EmpInfoDap = empInfoDap;
         }
         public SysLoginUser GetModel(int Id)
         {
-            var user = new SysLoginUser();
-
-            using (var app = _AppOfficeUnitOfwork())
-            {
-                user = app.SysLoginUserDap.GetByEmpIDIndex(Id);
-                app.Commit();
-            }
-
-            return user;
+            return _SysLoginUserDap.GetByEmpIDIndex(Id);
         }
 
         public EmpInfo GetEmpModel(int Id)
         {
-            var empInfo = new EmpInfo();
-
-            using (var app = _E7HRUnitOfWork())
-            {
-                empInfo = app.EmpInfoDap.GetByEmpId(Id);
-                app.Commit();
-            }
-
-            return empInfo;
+            return _EmpInfoDap.GetByEmpId(Id);
         }
     }
 }
