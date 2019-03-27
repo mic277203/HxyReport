@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HxyReport.Core;
+using System;
 
 namespace HxyReport.Services.DncUser
 {
@@ -6,5 +7,7 @@ namespace HxyReport.Services.DncUser
     {
         Data.HxyReport.DncUser GetByUserName(string userName);
         Data.HxyReport.DncUser GetByGuid(Guid guid);
+
+        PageList<Data.HxyReport.DncUser> GetPager(string userName, int pageIndex, int pageSize);
     }
 }

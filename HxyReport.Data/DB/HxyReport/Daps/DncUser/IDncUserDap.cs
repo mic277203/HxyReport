@@ -1,3 +1,4 @@
+using HxyReport.Core;
 using System.Collections.Generic;
 
 namespace HxyReport.Data.HxyReport
@@ -12,5 +13,6 @@ namespace HxyReport.Data.HxyReport
         void Update(DncUser model);
         void Update(IEnumerable<DncUser> models);
         DncUser GetByUserName(string userName);
+        PageList<DncUser> GetPager(string userName, int pageIndex, int pageSize);
     }
 }

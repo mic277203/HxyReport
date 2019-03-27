@@ -4,6 +4,8 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using Dapper;
+using HxyReport.Core;
+using System.Linq;
 
 namespace HxyReport.Data
 {
@@ -14,7 +16,7 @@ namespace HxyReport.Data
 
         protected HxyReportBaseDap()
         {
-            Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["HxyReport"].ConnectionString);
+            Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DnZeus"].ConnectionString);
         }
 
         protected IDbConnection Connection
@@ -33,7 +35,28 @@ namespace HxyReport.Data
                     _connection = _transaction.Connection;
             }
         }
+        public PageList<T> GetJoinPager<T>(MsSqlPaginParam p) where T : class
+        {
+            PageList<T> result = new PageList<T>();
 
+            OpenConnection();
+            try
+            {
+                var param = ObjectHelper.DynamicExtend(p.WhereParam,
+                    new { PageIndex = p.PageIndex, PageSize = p.PageSize });
+
+                var multi = SqlMapper.QueryMultiple(_connection, p.ToString(), (object)param);
+
+                result.Results = multi.Read<T>().ToList();
+                result.TotalCount = multi.Read<int>().FirstOrDefault();
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return result;
+        }
         protected IDbTransaction BeginTransaction()
         {
             OpenConnection();

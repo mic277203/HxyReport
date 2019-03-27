@@ -94,6 +94,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HxyReport.Core\HxyReport.Core.csproj">
+      <Project>{ab4307d9-c505-4c09-bf79-bb04ee013f66}</Project>
+      <Name>HxyReport.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

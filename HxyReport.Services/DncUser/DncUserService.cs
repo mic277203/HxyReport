@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HxyReport.Core;
 using HxyReport.Data.HxyReport;
 
 namespace HxyReport.Services.DncUser
@@ -11,7 +12,7 @@ namespace HxyReport.Services.DncUser
     {
         private readonly IDncUserDap _IDncUserDap;
 
-        public DncUserService(IDncUserDap dncUserDap )
+        public DncUserService(IDncUserDap dncUserDap)
         {
             _IDncUserDap = dncUserDap;
         }
@@ -24,6 +25,11 @@ namespace HxyReport.Services.DncUser
         public Data.HxyReport.DncUser GetByGuid(Guid guid)
         {
             return _IDncUserDap.GetByGuid(guid);
+        }
+
+        public PageList<Data.HxyReport.DncUser> GetPager(string userName, int pageIndex, int pageSize)
+        {
+            return _IDncUserDap.GetPager(userName, pageIndex, pageSize);
         }
     }
 }

@@ -11,14 +11,11 @@ namespace HxyReport.Data.HxyReport
         public DncIconDap()
         {
         }
-
         public List<DncIcon> GetTop(int count)
         {
             var queryResult = Query<DncIcon>(string.Format("SELECT TOP {0} * FROM {1}", count, SqlTableName));
             return queryResult as List<DncIcon> ?? queryResult.ToList();
         }
-
-
         public DncIcon GetById(Int32 Id)
         {
             return Query<DncIcon>(SqlSelectCommand + " WHERE Id=@Id", new { Id = Id }).FirstOrDefault();
@@ -48,7 +45,6 @@ namespace HxyReport.Data.HxyReport
         {
             Execute(SqlUpdateCommand, models);
         }
-
 
         public const string SqlTableName = "dbo.DncIcon";
         public const string SqlSelectCommand = "SELECT * FROM " + SqlTableName;

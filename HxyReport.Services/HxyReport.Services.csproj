@@ -48,6 +48,10 @@
     <Compile Include="SysLoginUser\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HxyReport.Core\HxyReport.Core.csproj">
+      <Project>{AB4307D9-C505-4C09-BF79-BB04EE013F66}</Project>
+      <Name>HxyReport.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HxyReport.Data\HxyReport.Data.csproj">
       <Project>{ac34a053-d492-450b-bc3e-6ce25b341ebf}</Project>
       <Name>HxyReport.Data</Name>
