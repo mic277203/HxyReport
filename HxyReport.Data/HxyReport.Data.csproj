@@ -51,6 +51,36 @@
     <Compile Include="DB\E7HR\Principal\AppE7HRDap.cs" />
     <Compile Include="DB\E7HR\Daps\EmpInfo\EmpInfoDap.cs" />
     <Compile Include="DB\E7HR\Daps\EmpInfo\IEmpInfoDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncIcon\DncIconDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncIcon\DncIconUserDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncIcon\IDncIconDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncMenu\DncMenuDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncMenu\DncMenuUserDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncMenu\IDncMenuDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncPermission\DncPermissionDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncPermission\DncPermissionUserDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncPermission\IDncPermissionDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncRolePermissionMapping\DncRolePermissionMappingDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncRolePermissionMapping\DncRolePermissionMappingUserDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncRolePermissionMapping\IDncRolePermissionMappingDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncRole\DncRoleDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncRole\DncRoleUserDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncRole\IDncRoleDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncUserRoleMapping\DncUserRoleMappingDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncUserRoleMapping\DncUserRoleMappingUserDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncUserRoleMapping\IDncUserRoleMappingDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncUser\DncUserDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncUser\DncUserUserDap.cs" />
+    <Compile Include="DB\HxyReport\Daps\DncUser\IDncUserDap.cs" />
+    <Compile Include="DB\HxyReport\Principal\EntityObjects.cs" />
+    <Compile Include="DB\HxyReport\Principal\HxyReportBaseDap.cs" />
+    <Compile Include="DB\HxyReport\UserEntities\DncIconEntity.cs" />
+    <Compile Include="DB\HxyReport\UserEntities\DncMenuEntity.cs" />
+    <Compile Include="DB\HxyReport\UserEntities\DncPermissionEntity.cs" />
+    <Compile Include="DB\HxyReport\UserEntities\DncRoleEntity.cs" />
+    <Compile Include="DB\HxyReport\UserEntities\DncRolePermissionMappingEntity.cs" />
+    <Compile Include="DB\HxyReport\UserEntities\DncUserEntity.cs" />
+    <Compile Include="DB\HxyReport\UserEntities\DncUserRoleMappingEntity.cs" />
     <Compile Include="Public\BaseModel.cs" />
     <Compile Include="DB\AppOffice\Principal\AppOfficeBaseDap.cs" />
     <Compile Include="DB\AppOffice\Principal\EntityObjects.cs" />
@@ -64,5 +94,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

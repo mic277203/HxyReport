@@ -5,8 +5,10 @@ using HxyReport.Services.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using HxyReport.Data.HxyReport;
 
 namespace HxyReport.Client
 {
@@ -23,10 +25,15 @@ namespace HxyReport.Client
 
             Container = builder.Build();
 
-            var us = Container.Resolve<IUserService>();
+            //var us = Container.Resolve<IUserService>();
 
-            var model = us.GetModel(547);
-            var emp = us.GetEmpModel(547);
+            //var model = us.GetModel(547);
+            //var emp = us.GetEmpModel(547);
+            builder.RegisterType<DncUserDap>().As<IDncUserDap>();
+
+          var dap=  Container.Resolve<IDncUserDap>();
+
+          dap.
 
         }
     }

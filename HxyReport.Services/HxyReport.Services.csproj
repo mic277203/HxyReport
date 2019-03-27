@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DncUser\DncUserService.cs" />
+    <Compile Include="DncUser\IDncUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SysLoginUser\IUserService.cs" />
     <Compile Include="SysLoginUser\UserService.cs" />
