@@ -20,18 +20,19 @@ namespace HxyReport.Core
         public string Where { get; set; }
         public dynamic WhereParam { get; set; }
         public string OrderBy { get; set; }
+        /// <summary>
+        /// 单表分页时可用
+        /// </summary>
+        public  string TableName { get; set; }
 
-        public string GetPagerSql()
+        public  string ToJoinString()
         {
-            return string.Format(MsSqlPagingTemp, OrderBy, Sql, Where);
+            return $"{string.Format(MsSqlPagingTemp, OrderBy, Sql, Where)};{string.Format(MsSqlPagingCountTemp, Sql, Where)};";
         }
-        public string GetPagerCountSql()
+
+        public string ToSingleString()
         {
-            return string.Format(MsSqlPagingCountTemp, Sql, Where);
-        }
-        public override string ToString()
-        {
-            return $"{GetPagerSql()};{GetPagerCountSql()};";
+            return $"{string.Format(MsSqlPagingTemp, OrderBy, $"{Sql} from {TableName}", Where)};{string.Format(MsSqlPagingCountTemp, $"{Sql} from {TableName}", Where)};";
         }
     }
 }

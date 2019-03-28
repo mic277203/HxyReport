@@ -31,5 +31,10 @@ namespace HxyReport.Services.DncUser
         {
             return _IDncUserDap.GetPager(userName, pageIndex, pageSize);
         }
+
+        public PageList<Data.HxyReport.DncUser> GetJoinPager(string userName, int pageIndex, int pageSize)
+        {
+            return _IDncUserDap.GetJoinPager(userName, pageIndex, pageSize);
+        }
     }
 }

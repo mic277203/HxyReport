@@ -16,7 +16,7 @@ namespace HxyReport.Data
 
         protected HxyReportBaseDap()
         {
-            Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DnZeus"].ConnectionString);
+            Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["HxyReport"].ConnectionString);
         }
 
         protected IDbConnection Connection
@@ -35,7 +35,13 @@ namespace HxyReport.Data
                     _connection = _transaction.Connection;
             }
         }
-        public PageList<T> GetJoinPager<T>(MsSqlPaginParam p) where T : class
+        /// <summary>
+        /// 单表分页查询
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        protected PageList<T> GetPager<T>(MsSqlPaginParam p) where T : class
         {
             PageList<T> result = new PageList<T>();
 
@@ -45,7 +51,36 @@ namespace HxyReport.Data
                 var param = ObjectHelper.DynamicExtend(p.WhereParam,
                     new { PageIndex = p.PageIndex, PageSize = p.PageSize });
 
-                var multi = SqlMapper.QueryMultiple(_connection, p.ToString(), (object)param);
+                var multi = SqlMapper.QueryMultiple(_connection, p.ToSingleString(), (object)param);
+
+                result.Results = multi.Read<T>().ToList();
+                result.TotalCount = multi.Read<int>().FirstOrDefault();
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 多表关联分页查询
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        protected PageList<T> GetJoinPager<T>(MsSqlPaginParam p) where T : class
+        {
+            PageList<T> result = new PageList<T>();
+
+            OpenConnection();
+            try
+            {
+                var param = ObjectHelper.DynamicExtend(p.WhereParam,
+                    new { PageIndex = p.PageIndex, PageSize = p.PageSize });
+
+                var multi = SqlMapper.QueryMultiple(_connection, p.ToJoinString(), (object)param);
 
                 result.Results = multi.Read<T>().ToList();
                 result.TotalCount = multi.Read<int>().FirstOrDefault();

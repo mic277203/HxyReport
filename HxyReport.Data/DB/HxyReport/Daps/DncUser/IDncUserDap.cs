@@ -13,6 +13,8 @@ namespace HxyReport.Data.HxyReport
         void Update(DncUser model);
         void Update(IEnumerable<DncUser> models);
         DncUser GetByUserName(string userName);
+        PageList<DncUser> GetJoinPager(string userName, int pageIndex, int pageSize);
+
         PageList<DncUser> GetPager(string userName, int pageIndex, int pageSize);
     }
 }

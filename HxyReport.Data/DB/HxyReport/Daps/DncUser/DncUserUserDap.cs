@@ -19,8 +19,14 @@ namespace HxyReport.Data.HxyReport
 
             return Query<DncUser>(SqlSelectCommand + where, new { LoginName = userName }).FirstOrDefault();
         }
-
-        public PageList<DncUser> GetPager(string userName, int pageIndex, int pageSize)
+        /// <summary>
+        /// 多表关联分页查询
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        public PageList<DncUser> GetJoinPager(string userName, int pageIndex, int pageSize)
         {
             var p = new MsSqlPaginParam
             {
@@ -35,6 +41,28 @@ namespace HxyReport.Data.HxyReport
             };
 
             return GetJoinPager<DncUser>(p);
+        }
+        /// <summary>
+        /// 单表分页查询
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        public PageList<DncUser> GetPager(string userName, int pageIndex, int pageSize)
+        {
+            var p = new MsSqlPaginParam
+            {
+                Sql = @"*",
+                TableName =SqlTableName,
+                Where = "LoginName=@LoginName",
+                WhereParam = new { LoginName = userName },
+                OrderBy = "CreatedOn,[Guid] desc",
+                PageIndex = pageIndex,
+                PageSize = pageSize
+            };
+
+            return GetPager<DncUser>(p);
         }
     }
 }

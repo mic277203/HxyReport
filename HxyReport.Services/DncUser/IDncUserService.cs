@@ -9,5 +9,6 @@ namespace HxyReport.Services.DncUser
         Data.HxyReport.DncUser GetByGuid(Guid guid);
 
         PageList<Data.HxyReport.DncUser> GetPager(string userName, int pageIndex, int pageSize);
+        PageList<Data.HxyReport.DncUser> GetJoinPager(string userName, int pageIndex, int pageSize);
     }
 }
