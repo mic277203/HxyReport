@@ -209,6 +209,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="config\Log4Net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
     <Content Include="Scripts\jquery-3.1.0.min.js" />
@@ -300,6 +303,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\HxyReport.Core\HxyReport.Core.csproj">
+      <Project>{ab4307d9-c505-4c09-bf79-bb04ee013f66}</Project>
+      <Name>HxyReport.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HxyReport.Data\HxyReport.Data.csproj">
       <Project>{AC34A053-D492-450B-BC3E-6CE25B341EBF}</Project>
       <Name>HxyReport.Data</Name>
